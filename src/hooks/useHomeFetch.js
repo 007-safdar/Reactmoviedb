@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import {useState,useEffect,useRef} from 'react';
+import {useState,useEffect} from 'react';
 import API from '../API';
 
 const initialState={
@@ -20,22 +20,26 @@ const fetchMovies =async(page,searchTerm="")=>{
         setLoading(true);
 
         const movies=await API.fetchMovies(searchTerm,page);
-        console.log(movies);
+        
         setState(prev=>({
             ...movies,
             results:
-            page>1?[...prev.results,...movies.results]:[...movies.results]
+            page > 1 ? [...prev.results, ...movies.results] : [...movies.results]
         }))
     }
     catch(err){
         setError(true);
     }
+
     setLoading(false);
-};
+   
+}
     //initial Render
     useEffect(()=>{
         fetchMovies(1);
     },[])
-
-return {state,loading,error};
+    
+    return {state,loading,error};
 };
+
+

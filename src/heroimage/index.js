@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-expressions */
 
 import React from 'react';
-
-import{Wrapper,Content,Text} from './heroImage.styles';
+//styles
+import{Wrapper,Content,Text} from './HeroImage.styles';
 
 const HeroImage=({image,title,text})=>{
     <Wrapper image={image}>
