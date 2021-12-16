@@ -36,11 +36,13 @@ const SearchBar=({setSearchTerm})=>{
                 onChange={event =>{
                     setState(event.currentTarget.value)    
                 }}
-                //value={state}
+                value={state}
+            
                 />
             </Content>
         </Wrapper>
     )
+    
 }
 
 export default SearchBar;

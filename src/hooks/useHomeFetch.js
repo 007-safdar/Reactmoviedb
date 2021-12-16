@@ -26,7 +26,8 @@ const fetchMovies =async(page,searchTerm="")=>{
             ...movies,
             results:
             page > 1 ? [...prev.results, ...movies.results] : [...movies.results]
-        }))
+        }));
+
     }
     catch(err){
         setError(true);
@@ -37,8 +38,9 @@ const fetchMovies =async(page,searchTerm="")=>{
 }
     //initial Render
     useEffect(()=>{
-        fetchMovies(1);
-    },[])
+        setState(initialState);
+        fetchMovies(1,searchTerm);
+    },[searchTerm])
     
     return {state,loading,error,setSearchTerm};
 };

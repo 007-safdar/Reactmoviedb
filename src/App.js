@@ -13,10 +13,7 @@ const App = () => {
         <div className="App">
             <Header/>
             <Home/>
-            start Here
-            <GlobalStyle/>
-
-            
+            <GlobalStyle/>            
         </div>
     );
 }

@@ -7,8 +7,9 @@ padding:0 20px;
 
 h1{
     color:var(--medGrey);
-    @media screen and (max-width:760px)
+    @media screen and (max-width:760px){
     font-size: var(--fontBig);
+    }
 }
 `;
 
